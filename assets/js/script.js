@@ -11,8 +11,17 @@ let generatePassword = function () {
   let characterTypeArray = characterTypes();
   console.log("The characters included are " + characterTypeArray.join(""));
   console.log("The number of characters selected is " + characterTypeArray.length);
+
+  //a loop that creates a random password of the appropriate length with the selected pool of characters
+  for (let i = 0; i < passwordLength; i++) {
+    let randomizer = Math.floor((Math.random() * characterTypeArray.length));
+    password = password.concat(characterTypeArray[randomizer]);
+  }
+
+  return password;  
 }
 
+//function for selection the password's character length
 let passwordLength = function() {
   let characters = "";
   
