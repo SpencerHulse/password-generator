@@ -34,13 +34,11 @@ let passwordLength = function() {
 
     //converting the string from the prompt into an integer
     characters = parseInt(characters);
-    console.log(characters.length);
-    console.log(!characters)
 
     //check for valid character length and either recursively enter the function or return the characters
     if (!characters || characters < 8 || characters > 128) {
       window.alert("You have entered an invalid character length. Please try again!");
-      generatePassword();
+      return passwordLength();
     } else {
       return characters;
     }
@@ -86,12 +84,12 @@ let characterTypes = function() {
   //checks to make sure at least one type was selected
   if (selectedArray.length === 0) {
     window.alert("You did not select any character types. Please choose again.");
-    characterTypes();
+    return characterTypes();
   } else {
     let typesConfirm = window.confirm("You have chosen these character types: " + chosenTypes.join(", ") + "." + "\n\nIs that correct?");
 
     if(!typesConfirm) {
-      characterTypes();
+      return characterTypes();
     }
   };
   return selectedArray;
