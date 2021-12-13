@@ -13,13 +13,15 @@ let generatePassword = function () {
   console.log("The number of characters selected is " + characterTypeArray.length);
 
   //a loop that creates a random password of the appropriate length with the selected pool of characters
-  for (let i = 0; i < passwordLength; i++) {
+  for (let i = 0; i < length; i++) {
     let randomizer = Math.floor((Math.random() * characterTypeArray.length));
     password = password.concat(characterTypeArray[randomizer]);
   }
 
+  console.log(password);
+
   return password;  
-}
+};
 
 //function for selection the password's character length
 let passwordLength = function() {
@@ -43,7 +45,7 @@ let passwordLength = function() {
       return characters;
     }
   }
-}
+};
 
 let characterTypes = function() {
   //object holding the various types of characters and their arrays
@@ -79,7 +81,7 @@ let characterTypes = function() {
       selectedArray = selectedArray.concat(characterTypeObj[i].array);
       chosenTypes = chosenTypes.concat(characterTypeObj[i].name);
     }
-  }
+  };
 
   //checks to make sure at least one type was selected
   if (selectedArray.length === 0) {
@@ -91,9 +93,9 @@ let characterTypes = function() {
     if(!typesConfirm) {
       characterTypes();
     }
-  }
+  };
   return selectedArray;
-}
+};
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
