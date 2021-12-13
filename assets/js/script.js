@@ -72,7 +72,7 @@ let characterTypes = function() {
 
   //the loop used to select character types
   for(let i = 0; i < characterTypeObj.length; i++) {
-    let confirmCharacterType = window.confirm("Do you want your password to include " + characterTypeObj[i].name + " letters?");
+    let confirmCharacterType = window.confirm("Do you want your password to include " + characterTypeObj[i].name + " characters?");
     
     //asks whether they want each type of character
     if (confirmCharacterType) {
